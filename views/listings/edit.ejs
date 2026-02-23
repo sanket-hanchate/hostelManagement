@@ -1,0 +1,99 @@
+<% layout("/listings/boilerplate") %>
+
+<div class="container my-5 col-5">
+  <h2 class="mb-4 text-danger">Student Registration Form</h2>
+
+  <form action="/listings/<%= result %>?_method=PATCH" method="POST" class="needs-validation" novalidate>
+
+    <!-- Name -->
+    <div class="mb-3">
+      <label for="name" class="form-label">Name <span class="text-danger">*</span></label>
+      <input type="text" class="form-control" id="name" name="name" value="<%= result.name %>">
+    </div>
+
+    <!-- Email -->
+    <div class="mb-3">
+      <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+      <input type="email" class="form-control" id="email" name="email" value="<%= result.email %>">
+    </div>
+
+    <!-- Phone -->
+    <div class="mb-3">
+      <label for="phone" class="form-label">Phone <span class="text-danger">*</span></label>
+      <input type="tel" class="form-control" id="phone" name="phone" value="<%= result.phone %>">
+    </div>
+
+    <!-- Parent Mobile -->
+    <div class="mb-3">
+      <label for="parentMobile" class="form-label">Parent Mobile</label>
+      <input type="tel" class="form-control" id="parentMobile" name="parentMobile" value="<%= result.parentMobile %>">
+    </div>
+
+    <!-- Address -->
+    <div class="mb-3">
+      <label for="address" class="form-label">Address</label>
+      <textarea class="form-control" id="address" name="address" rows="2" value="<%= result.address %>"></textarea>
+    </div>
+
+    <!-- Room Number -->
+    <div class="mb-3">
+      <label for="roomNo" class="form-label">Room Number</label>
+      <input type="number" class="form-control" id="roomNo" name="roomNo" value="roomNo">
+    </div>
+
+    <!-- Course -->
+    <div class="mb-3">
+      <label for="course" class="form-label">Course</label>
+      <input type="text" class="form-control" id="course" name="course" value="<%= result.course %>">
+    </div>
+
+    <!-- Branch -->
+    <div class="mb-3">
+      <label for="branch" class="form-label">Branch</label>
+      <input type="text" class="form-control" id="branch" name="branch" value="<%= result.branch %>">
+    </div>
+
+    <!-- Fine -->
+    <div class="mb-3">
+      <label for="fine" class="form-label">Fine (₹)</label>
+      <input type="number" class="form-control" id="fine" name="fine" value="<%= result.fine %>">
+    </div>
+
+    <!-- Fee Status -->
+    <div class="mb-3">
+      <label for="feeStatus" class="form-label">Fee Status</label>
+      <select class="form-select" id="feeStatus" name="feeStatus" value="<%= result.feeStatus %>">
+        <option value="Paid">Paid</option>
+        <option value="Pending">Pending</option>
+      </select>
+    </div>
+
+    <!-- Image URL -->
+    <div class="mb-3">
+      <label for="image" class="form-label">Image URL</label>
+      <input type="url" class="form-control" id="image" name="image" value="<%= result.image %>">
+    </div>
+    <button type="submit" class="btn btn-danger">Submit</button>
+  </form>
+</div>
+
+<!-- Bootstrap validation script -->
+<script>
+  // Example starter JavaScript for disabling form submissions if there are invalid fields
+  (function () {
+    'use strict'
+
+    const forms = document.querySelectorAll('.needs-validation')
+
+    Array.from(forms).forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+  })()
+</script>

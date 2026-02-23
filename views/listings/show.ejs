@@ -1,0 +1,116 @@
+<% layout("/listings/boilerplate") %>
+
+<body>
+<div class="container my-5">
+
+  <!-- Student Info Card -->
+  <div class="card student-card mx-auto shadow-lg">
+    <div class="row g-0">
+      
+      <!-- Student Image -->
+      <div class="col-md-4">
+        <img src="<%= result.image %>" class="img-fluid rounded-start" alt="<%= result.name %>">
+      </div>
+
+      <!-- Student Details -->
+      <div class="col-md-8">
+        <div class="card-body">
+          <h2 class="card-title text-primary mb-3"><%= result.name %></h2>
+          
+          <p><strong>Email:</strong> <%= result.email %></p>
+          <p><strong>Phone:</strong> <%= result.phone %></p>
+          <p><strong>Parent Contact:</strong> <%= result.parentMobile %></p>
+          <p><strong>Address:</strong> <%= result.address %></p>
+          <p><strong>Room No:</strong> <%= result.roomNo %></p>
+          <p><strong>Course:</strong> <%= result.course %> - <%= result.branch %></p>
+          <p><strong>Fine:</strong> <span class="fine">₹<%= result.fine %></span></p>
+          <p>
+            <strong>Fee Status:</strong> 
+            <span class="fee-status <%= result.feeStatus === 'Paid' ? 'fee-paid' : 'fee-pending' %>">
+              <%= result.feeStatus %>
+            </span>
+          </p>
+
+          <a href="/listings" class="btn btn-outline-success mt-3">Back to List</a>
+          <a href="/listings" class="btn btn-outline-dark mt-3 ms-3">Edit</a>
+          <a href="/listings" class="btn btn-outline-danger mt-3 ms-3" id="i">Delete</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+/* Card styling */
+.student-card {
+  max-width: 900px;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.student-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+}
+
+/* Image */
+.student-card img {
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px 0 0 15px;
+}
+
+/* Fee Status Badge */
+.fee-status {
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 0.9rem;
+  border-radius: 12px;
+  font-weight: bold;
+  color: white;
+}
+
+.fee-paid {
+  background-color: #198754; /* green */
+}
+
+.fee-pending {
+  background-color: #dc3545; /* red */
+}
+
+/* Fine styling */
+.fine {
+  font-weight: bold;
+  color: #ff7b00;
+}
+
+/* Text Styling */
+.card-title {
+  font-weight: 700;
+}
+
+.card-body p {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+/* Button styling */
+.btn-outline-primary {
+  border-width: 2px;
+  font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .student-card {
+    max-width: 100%;
+  }
+  .student-card img {
+    border-radius: 15px 15px 0 0;
+    height: 250px;
+  }
+}
+</style>
+</body>
