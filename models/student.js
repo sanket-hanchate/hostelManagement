@@ -38,7 +38,7 @@ const studentSchema = new mongoose.Schema({
 
   fine: {
     type: Number,
-    default: 0
+    default: 0,
   },
 
   feeStatus: {

@@ -40,9 +40,19 @@
     </div>
   <div class="navbar-nav mx-auto" id="navbarNav">
   <ul class="navbar-nav">
+    <% if(!curruser) { %>
     <li class="nav-item me-2">
-      <a class="btn btn-outline-danger" aria-current="page" href="#">Login</a>
+      <a class="btn btn-outline-danger" aria-current="page" href="/login">Login</a>
     </li>
+     <li class="nav-item me-2">
+      <a class="btn btn-outline-danger" aria-current="page" href="/signup">Signup</a>
+    </li>
+    <% } %>
+    <% if(curruser){ %>
+     <li class="nav-item me-2">
+      <a class="btn btn-outline-danger" aria-current="page" href="/logout">Logout</a>
+    </li>
+    <% } %>
   </ul>
 </div>
 </nav>

@@ -1,0 +1,40 @@
+<% layout("/listings/boilerplate") %>
+
+<div class="container my-5 col-5">
+  <h2 class="mb-4 text-danger">Admin Login</h2>
+  <form action="/login" method="POST">
+    <!-- Name -->
+    <div class="mb-3">
+      <label for="name" class="form-label">Username<span class="text-danger">*</span></label>
+      <input type="text" class="form-control" id="name" name="username" required>
+    </div>
+
+    <!-- Email -->
+    <div class="mb-3">
+      <label class="form-label">Password <span class="text-danger">*</span></label>
+      <input type="password" class="form-control" id="password" name="password" required>
+    </div>
+    <button type="submit" class="btn btn-danger">Login</button>
+  </form>
+</div>
+
+<!-- Bootstrap validation script -->
+<script>
+  // Example starter JavaScript for disabling form submissions if there are invalid fields
+  (function () {
+    'use strict'
+
+    const forms = document.querySelectorAll('.needs-validation')
+
+    Array.from(forms).forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+  })()
+</script>

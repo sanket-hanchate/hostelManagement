@@ -3,7 +3,7 @@
 <div class="container my-5 col-5">
   <h2 class="mb-4 text-danger">Student Registration Form</h2>
 
-  <form action="/listings/<%= result %>?_method=PATCH" method="POST" class="needs-validation" novalidate>
+  <form action="/listings/<%= result._id%>?_method=PATCH" method="POST" class="needs-validation" novalidate>
 
     <!-- Name -->
     <div class="mb-3">
@@ -32,13 +32,13 @@
     <!-- Address -->
     <div class="mb-3">
       <label for="address" class="form-label">Address</label>
-      <textarea class="form-control" id="address" name="address" rows="2" value="<%= result.address %>"></textarea>
+      <textarea class="form-control" id="address" name="address" rows="2"><%= result.address %></textarea>
     </div>
 
     <!-- Room Number -->
     <div class="mb-3">
       <label for="roomNo" class="form-label">Room Number</label>
-      <input type="number" class="form-control" id="roomNo" name="roomNo" value="roomNo">
+      <input type="number" class="form-control" id="roomNo" name="roomNo" value="<%= result.roomNo %>">
     </div>
 
     <!-- Course -->
