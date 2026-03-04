@@ -31,9 +31,29 @@
             </span>
           </p>
 
-          <a href="/listings" class="btn btn-outline-success mt-3">Back to List</a>
-          <a href="/listings" class="btn btn-outline-dark mt-3 ms-3">Edit</a>
-          <a href="/listings" class="btn btn-outline-danger mt-3 ms-3" id="i">Delete</a>
+
+          <div class="mt-3 d-flex gap-3">
+
+  <a href="/listings" class="btn btn-outline-success">
+    Back to List
+  </a>
+
+  <a href="/listings/<%= result._id %>/edit" class="btn btn-outline-dark">
+    Edit
+  </a>
+
+  <form action="/listings/<%= result._id %>?_method=DELETE" method="POST">
+    <button type="submit" class="btn btn-outline-danger">
+      Delete
+    </button>
+  </form>
+<% if(result.feeStatus === "Paid") { %>
+  <a href="/listings/<%= result._id %>/receipt" 
+     class="btn btn-primary">
+     Download Receipt (PDF)
+  </a>
+<% } %>
+</div>
         </div>
       </div>
 
