@@ -1,0 +1,101 @@
+<%- layout("listings/boilerplate") %>
+
+<style>
+    .pricing-header {
+        background: linear-gradient(135deg, #ff512f, #dd2476);
+        color: white;
+        padding: 60px 0;
+        text-align: center;
+    }
+
+    .pricing-card {
+        border: none;
+        border-radius: 15px;
+        transition: 0.3s ease-in-out;
+    }
+
+    .pricing-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+
+    .price {
+        font-size: 40px;
+        font-weight: bold;
+        color: #dd2476;
+    }
+
+    .btn-custom {
+        background-color: #dd2476;
+        color: white;
+        border-radius: 25px;
+    }
+
+    .btn-custom:hover {
+        background-color: #ff512f;
+        color: white;
+    }
+</style>
+
+<!-- Header Section -->
+<section class="pricing-header">
+    <div class="container">
+        <h1 class="display-4">Hostel Pricing Plans</h1>
+        <p class="lead">Comfortable Stay | Affordable Price | Safe Environment</p>
+    </div>
+</section>
+
+<!-- Pricing Cards -->
+<div class="container my-5">
+    <div class="row g-4">
+
+        <!-- Monthly Plan -->
+        <div class="col-md-4">
+            <div class="card pricing-card text-center p-4">
+                <h4 class="mb-3">Monthly Plan</h4>
+                <p class="price">₹6,000</p>
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>✔ Furnished Room</li>
+                    <li>✔ 24/7 Water Supply</li>
+                    <li>✔ WiFi Access</li>
+                    <li>✔ Security & CCTV</li>
+                </ul>
+                <a href="/add" class="btn btn-custom">Book Now</a>
+            </div>
+        </div>
+
+        <!-- Semester Plan -->
+        <div class="col-md-4">
+            <div class="card pricing-card text-center p-4 border border-danger">
+                <h4 class="mb-3 text-danger">Semester Plan</h4>
+                <p class="price">₹32,000</p>
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>✔ Furnished Room</li>
+                    <li>✔ 24/7 Water Supply</li>
+                    <li>✔ High-Speed WiFi</li>
+                    <li>✔ Laundry Facility</li>
+                    <li>✔ Free Maintenance</li>
+                </ul>
+                <a href="/add" class="btn btn-custom">Book Now</a>
+            </div>
+        </div>
+
+        <!-- Yearly Plan -->
+        <div class="col-md-4">
+            <div class="card pricing-card text-center p-4">
+                <h4 class="mb-3">Yearly Plan</h4>
+                <p class="price">₹60,000</p>
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>✔ Furnished Room</li>
+                    <li>✔ 24/7 Water & Electricity</li>
+                    <li>✔ Unlimited WiFi</li>
+                    <li>✔ Laundry Facility</li>
+                    <li>✔ Free Maintenance</li>
+                    <li>✔ 24/7 Security</li>
+                </ul>
+                <a href="/add" class="btn btn-custom">Book Now</a>
+            </div>
+        </div>
+
+    </div>
+</div>

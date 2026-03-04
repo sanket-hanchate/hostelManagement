@@ -21,6 +21,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/hostel')
 
 app.set("views",path.join(__dirname,"views"));
 app.set("view engine","ejs");
+app.use(express.static("public"));
 app.engine("ejs",ejsmate);
 const sessionOption={
     secret:"mysecretkey",
@@ -62,6 +63,10 @@ app.get("/listings",async (req, res) => {
         const allListings = await Student.find({});
         res.render("listings/index", { results: allListings });
     }
+});
+
+app.get("/listings/pricing",(req,res)=>{
+    res.render("listings/pricing");
 });
 
 app.get("/listings/:id",async(req,res)=>{
